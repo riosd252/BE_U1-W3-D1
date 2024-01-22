@@ -1,0 +1,40 @@
+<!-- Esercizio 1
+
+SELECT * FROM customer WHERE name = 'Mario';
+
+Esercizio 2
+
+SELECT name, surname FROM customer WHERE birthYear = '1982';
+
+Esercizio 3
+
+SELECT count(*) FROM invoice WHERE vat = 20;
+
+Esercizio 4
+
+SELECT * FROM products WHERE EXTRACT (YEAR FROM activation_date )=2017 
+AND (currently_available = true OR is_produced = true);
+
+Esercizio 5
+
+SELECT * FROM invoice
+JOIN customer ON customer.customer_id = invoice.customer_id
+WHERE total_amount < 1000;
+
+Esercizio 6
+
+SELECT invoice_id, total_amount, vat, invoice_date, supplier.supplier_name FROM invoice
+JOIN supplier ON supplier.supplier_id = invoice.supplier_id;
+
+Esercizio 7
+
+SELECT
+EXTRACT(YEAR FROM invoice_date) AS anno, count(*) AS invoice_number FROM invoice 
+WHERE vat = 20
+GROUP BY EXTRACT(YEAR FROM invoice_date);
+
+Esercizio 8
+
+SELECT
+EXTRACT(YEAR FROM invoice_date) AS anno, count(*) AS invoice_number, SUM(invoice.total_amount) AS total_income FROM invoice
+GROUP BY EXTRACT(YEAR FROM invoice_date); -->
